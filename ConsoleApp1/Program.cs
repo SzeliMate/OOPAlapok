@@ -11,10 +11,26 @@ namespace ConsoleApp1
         private string _nev;
         private int _kor;
 
-        public Szemely(string nev, int kor)
+        public Szemely(string nev)
         {
             _nev = nev;
-            _kor = kor;
+            
+        }
+
+        public string Nev
+        {
+            get { return _nev; }
+            set { _nev = value; }
+        }
+        public int Kor
+        {
+            get { return _kor; }
+            set {
+                if (value >= 0)
+                    _kor = value;
+                else
+                    Console.WriteLine("Hibás érték.");
+                    _kor = value; }
         }
 
         public string Kiir()
@@ -26,9 +42,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Szemely tanulo1 = new Szemely("Kiss Ilona",44);
-            Console.WriteLine(tanulo1.Kiir());
+            Szemely tanulo1 = new Szemely("Kiss Ilona ");
+            tanulo1.Kor = 34;
+            Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
         }
-
+         
     }
 }
