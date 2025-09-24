@@ -32,11 +32,12 @@ namespace ConsoleApp1
                     Console.WriteLine("Hibás érték.");
                     _kor = value; }
         }
-
-        public string Kiir()
+        public override string ToString()
         {
             return $"{_nev}, {_kor} ";
         }
+
+       
     }
     internal class Program
     {
@@ -44,7 +45,10 @@ namespace ConsoleApp1
         {
             Szemely tanulo1 = new Szemely("Kiss Ilona ");
             tanulo1.Kor = 34;
-            Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
+
+
+            Console.WriteLine(tanulo1);
+            // Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
         }
          
     }
